@@ -10,6 +10,7 @@ import { navItems, sections } from './data/sections'
 
 const activeSection = ref(sections[0].id)
 const visibleSections = ref<string[]>([])
+const heroInView = ref(true)
 const readSections = computed(() => {
   const activeIndex = sections.findIndex((section) => section.id === activeSection.value)
   if (activeIndex < 0) return []
@@ -18,6 +19,7 @@ const readSections = computed(() => {
 
 const sectionElements = new Map<string, HTMLElement>()
 let observer: IntersectionObserver | null = null
+let heroObserver: IntersectionObserver | null = null
 
 const registerSection = (id: string, element: Element | null) => {
   if (!(element instanceof HTMLElement)) {
@@ -28,7 +30,7 @@ const registerSection = (id: string, element: Element | null) => {
 }
 
 const scrollToSection = (id: string) => {
-  const target = sectionElements.get(id)
+  const target = id === 'hero' ? document.getElementById('hero') : sectionElements.get(id)
   if (!target) return
 
   target.scrollIntoView({
@@ -38,6 +40,9 @@ const scrollToSection = (id: string) => {
 }
 
 const activeNav = computed(() => {
+  if (heroInView.value) {
+    return 'home'
+  }
   const section = sections.find((item) => item.id === activeSection.value)
   return section?.navGroup ?? 'home'
 })
@@ -70,10 +75,25 @@ onMounted(() => {
   )
 
   sectionElements.forEach((element) => observer?.observe(element))
+
+  const heroElement = document.getElementById('hero')
+  if (heroElement) {
+    heroObserver = new IntersectionObserver(
+      (entries) => {
+        heroInView.value = entries[0]?.isIntersecting ?? false
+      },
+      {
+        threshold: 0.35,
+      },
+    )
+
+    heroObserver.observe(heroElement)
+  }
 })
 
 onBeforeUnmount(() => {
   observer?.disconnect()
+  heroObserver?.disconnect()
 })
 </script>
 
