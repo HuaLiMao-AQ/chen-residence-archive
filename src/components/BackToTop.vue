@@ -4,7 +4,7 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 const visible = ref(false)
 
 const handleScroll = () => {
-  visible.value = window.scrollY > 480
+  visible.value = window.scrollY > 520
 }
 
 const scrollToTop = () => {
@@ -26,9 +26,8 @@ onBeforeUnmount(() => {
     type="button"
     class="back-to-top"
     :class="{ 'is-visible': visible }"
-    aria-label="返回顶部"
     @click="scrollToTop"
   >
-    ↑
+    回页首
   </button>
 </template>

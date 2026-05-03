@@ -1,0 +1,26 @@
+:root {
+  --color-paper: #f8f3ea;
+  --color-paper-deep: #efe5d6;
+  --color-card: #fffdf8;
+  --color-ink: #24211e;
+  --color-muted: #7a7167;
+  --color-light-muted: #a59b90;
+  --color-red: #a32020;
+  --color-red-dark: #7f1d1d;
+  --color-red-light: #e8c9c4;
+  --color-border: #ded4c8;
+  --color-border-dark: #b8aa99;
+  --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  --font-sans: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', monospace;
+  --page-width: 1360px;
+  --article-width: 840px;
+  --directory-width: 286px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+}

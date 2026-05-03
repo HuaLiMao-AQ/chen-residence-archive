@@ -6,8 +6,8 @@ const progress = ref(0)
 const updateProgress = () => {
   const scrollTop = window.scrollY
   const viewportHeight = window.innerHeight
-  const documentHeight = document.documentElement.scrollHeight - viewportHeight
-  progress.value = documentHeight <= 0 ? 0 : Math.min((scrollTop / documentHeight) * 100, 100)
+  const scrollable = document.documentElement.scrollHeight - viewportHeight
+  progress.value = scrollable <= 0 ? 0 : Math.min((scrollTop / scrollable) * 100, 100)
 }
 
 onMounted(() => {
