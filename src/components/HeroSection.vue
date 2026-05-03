@@ -12,8 +12,6 @@ const overviewItems = [
 
 <template>
   <section id="hero" class="hero-section">
-    <div class="hero-section__backdrop"></div>
-    <div class="hero-section__texture"></div>
     <div class="hero-section__inner">
       <div class="hero-section__content">
         <p class="hero-section__eyebrow">课程实践成果展示</p>
@@ -38,17 +36,17 @@ const overviewItems = [
 
       <div class="hero-section__visual">
         <div class="hero-panel hero-panel--primary">
-          <span class="hero-panel__meta">专题关键词</span>
-          <h2>从地方资源切入，把党史故事讲得更近、更真切</h2>
+          <span class="hero-panel__meta">专题说明</span>
+          <h2>从地方红色资源切入，重建一条更贴近青年的阅读路径</h2>
           <p>
-            以浅底、大留白和档案感排版构建阅读节奏，让实践调研、人物叙事与理论分析在同一条时间轴上展开。
+            页面以专题文章的方式组织实践材料、人物故事和理论联系，尽量减少表演式装饰，让内容本身形成阅读节奏。
           </p>
         </div>
 
         <div class="hero-panel hero-panel--secondary">
           <div class="hero-panel__paper"></div>
           <p>独秀园</p>
-          <span>场馆线索 / 文献线索 / 青年线索</span>
+          <span>场馆线索 / 文献线索 / 青年视角</span>
         </div>
       </div>
     </div>
