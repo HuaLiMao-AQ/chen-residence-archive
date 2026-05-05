@@ -1,21 +1,44 @@
 :root {
-  --color-paper: #f8f3ea;
-  --color-paper-deep: #efe5d6;
-  --color-card: #fffdf8;
-  --color-ink: #24211e;
-  --color-muted: #7a7167;
-  --color-light-muted: #a59b90;
-  --color-red: #a32020;
-  --color-red-dark: #7f1d1d;
-  --color-red-light: #e8c9c4;
-  --color-border: #ded4c8;
-  --color-border-dark: #b8aa99;
-  --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  /* Paper & background — warmer, more aged feel */
+  --color-paper: #f5edd8;
+  --color-paper-deep: #ebe2c8;
+  --color-card: #faf6ea;
+  --color-paper-edge: #d9ccb0;
+
+  /* Ink colors */
+  --color-ink: #1a1610;
+  --color-ink-light: #2e2820;
+  --color-muted: #6b5f4f;
+  --color-light-muted: #9a8d7a;
+
+  /* Red spectrum — richer, more traditional Chinese red */
+  --color-red: #b22222;
+  --color-red-dark: #8b1a1a;
+  --color-red-light: #e8c4b8;
+  --color-red-faint: rgba(178, 34, 34, 0.08);
+
+  /* Gold/amber accent — traditional Chinese print accent */
+  --color-gold: #c49a3c;
+  --color-gold-dark: #96741e;
+
+  /* Borders — finer, more ink-like */
+  --color-border: #d1c4a8;
+  --color-border-dark: #a89878;
+  --color-border-fine: rgba(160, 140, 108, 0.35);
+
+  /* Typography — classical Chinese serif stack */
+  --font-serif: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
+  --font-display: 'ZCOOL XiaoWei', 'Ma Shan Zheng', 'Noto Serif SC', 'KaiTi', serif;
+  --font-calligraphy: 'Ma Shan Zheng', 'ZCOOL XiaoWei', 'STKaiti', 'KaiTi', cursive;
   --font-sans: 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', monospace;
+
+  /* Layout */
   --page-width: 1360px;
   --article-width: 840px;
-  --directory-width: 286px;
+  --directory-width: 260px;
+
+  /* Spacing */
   --space-1: 8px;
   --space-2: 12px;
   --space-3: 16px;

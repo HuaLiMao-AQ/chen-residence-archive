@@ -17,7 +17,7 @@ const emit = defineEmits<{
     <div class="directory-box">
       <div class="directory-box__head">
         <span>本期目录</span>
-        <p>Issue Contents</p>
+        <p>Contents</p>
       </div>
 
       <button

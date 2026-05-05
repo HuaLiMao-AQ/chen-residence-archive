@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ComponentPublicInstance } from 'vue'
 import type { SectionData } from '../data/sections'
+import AppendixContent from './AppendixContent.vue'
 import ArchiveNote from './ArchiveNote.vue'
 import EditorNote from './EditorNote.vue'
 import PhotoArchiveCard from './PhotoArchiveCard.vue'
@@ -81,5 +82,12 @@ const handleRef = (value: Element | ComponentPublicInstance | null) => {
     </div>
 
     <SourceBox title="资料来源栏" :items="section.sources" />
+
+    <AppendixContent
+      v-if="section.timeline || section.references || section.discussionNotes"
+      :timeline="section.timeline"
+      :references="section.references"
+      :discussion-notes="section.discussionNotes"
+    />
   </section>
 </template>
