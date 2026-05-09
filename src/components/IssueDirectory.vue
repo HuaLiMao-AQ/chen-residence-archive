@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { nextTick, watch } from 'vue'
+import type { ComponentPublicInstance } from 'vue'
 import type { SectionData } from '../data/sections'
 
-defineProps<{
+const props = defineProps<{
   sections: SectionData[]
   activeId: string
   readIds: string[]
@@ -10,6 +12,35 @@ defineProps<{
 const emit = defineEmits<{
   select: [targetId: string]
 }>()
+
+const itemElements = new Map<string, HTMLElement>()
+
+const setItemRef = (id: string, element: Element | null) => {
+  if (!(element instanceof HTMLElement)) {
+    itemElements.delete(id)
+    return
+  }
+
+  itemElements.set(id, element)
+}
+
+const handleItemRef = (id: string, value: Element | ComponentPublicInstance | null) => {
+  setItemRef(id, value instanceof Element ? value : null)
+}
+
+watch(
+  () => props.activeId,
+  async (activeId) => {
+    if (!activeId || !window.matchMedia('(max-width: 1180px)').matches) return
+
+    await nextTick()
+    itemElements.get(activeId)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center',
+    })
+  },
+)
 </script>
 
 <template>
@@ -23,6 +54,7 @@ const emit = defineEmits<{
       <button
         v-for="section in sections"
         :key="section.id"
+        :ref="(element) => handleItemRef(section.id, element)"
         type="button"
         class="directory-item"
         :class="{

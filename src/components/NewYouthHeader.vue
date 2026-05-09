@@ -5,6 +5,7 @@ defineProps<{
     mastheadCenter: string
     mastheadRight: string
   }
+  breadcrumb?: string
 }>()
 
 const emit = defineEmits<{
@@ -20,6 +21,10 @@ const emit = defineEmits<{
       </button>
       <p class="masthead__center">{{ meta.mastheadCenter }}</p>
       <p class="masthead__right">{{ meta.mastheadRight }}</p>
+    </div>
+    <div v-if="breadcrumb" class="masthead__breadcrumb" aria-live="polite">
+      <span>阅读位置</span>
+      <strong>{{ breadcrumb }}</strong>
     </div>
   </header>
 </template>

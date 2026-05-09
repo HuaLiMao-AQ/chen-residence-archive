@@ -26,7 +26,6 @@ const handleRef = (value: Element | ComponentPublicInstance | null) => {
     :class="{ 'is-visible': visible }"
   >
     <header class="article-section__header">
-      <div class="article-section__ordinal">{{ section.ordinal }}</div>
       <div class="article-section__heading">
         <p v-if="section.intro" class="article-section__intro">{{ section.intro }}</p>
         <h2>{{ section.title }}</h2>
